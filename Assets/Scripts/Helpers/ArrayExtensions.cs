@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Codeavr
 {
-    internal static partial class Extensions
+    internal static partial class ArrayExtensions
     {
         public static bool InRange<T>(this T[] array, int index)
         {
@@ -18,7 +18,7 @@ namespace Codeavr
         {
             if (array != null && array.Length > 0)
             {
-                int randomIndex = random.Next(array.Length);
+                int randomIndex = UnityEngine.Random.Range(0, array.Length);
                 return array[randomIndex];
             }
             return default(T);
@@ -27,7 +27,7 @@ namespace Codeavr
         {
             if (list != null && list.Count > 0)
             {
-                int randomIndex = random.Next(list.Count);
+                int randomIndex = UnityEngine.Random.Range(0, list.Count);
                 return list[randomIndex];
             }
             return default(T);
@@ -46,14 +46,6 @@ namespace Codeavr
             TValue result;
             dict.TryGetValue(key, out result);
             return result;
-        }
-    };
-    internal static partial class Extensions
-    {
-        static Random random;
-        static Extensions()
-        {
-            random = new Random();
         }
     };
 };
