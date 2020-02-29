@@ -1,5 +1,15 @@
 Array Extensions
 ===
+## Why
+This:
+```c#
+Array.ForEach(array, print);
+```
+Transforms into:
+```c#
+array.ForEach(print);
+```
+
 
 ## Install
 
